@@ -91,7 +91,9 @@
             // 
             // btnNewGame
             // 
-            this.btnNewGame.BackColor = System.Drawing.Color.SpringGreen;
+            this.btnNewGame.BackColor = System.Drawing.Color.Blue;
+            this.btnNewGame.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.btnNewGame.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnNewGame.Location = new System.Drawing.Point(341, 38);
             this.btnNewGame.Name = "btnNewGame";
             this.btnNewGame.Size = new System.Drawing.Size(107, 32);
@@ -102,7 +104,9 @@
             // 
             // btnPause
             // 
-            this.btnPause.BackColor = System.Drawing.Color.MistyRose;
+            this.btnPause.BackColor = System.Drawing.Color.Red;
+            this.btnPause.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.btnPause.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnPause.Location = new System.Drawing.Point(341, 86);
             this.btnPause.Name = "btnPause";
             this.btnPause.Size = new System.Drawing.Size(107, 32);
@@ -113,7 +117,10 @@
             // 
             // btnResume
             // 
-            this.btnResume.BackColor = System.Drawing.Color.Ivory;
+            this.btnResume.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnResume.Enabled = false;
+            this.btnResume.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.btnResume.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnResume.Location = new System.Drawing.Point(341, 130);
             this.btnResume.Name = "btnResume";
             this.btnResume.Size = new System.Drawing.Size(107, 32);
@@ -135,6 +142,7 @@
             this.txtVelocity.Size = new System.Drawing.Size(100, 20);
             this.txtVelocity.TabIndex = 4;
             this.txtVelocity.Text = "0.5";
+            this.txtVelocity.Visible = false;
             // 
             // lblVelocity
             // 
@@ -144,6 +152,7 @@
             this.lblVelocity.Size = new System.Drawing.Size(44, 13);
             this.lblVelocity.TabIndex = 5;
             this.lblVelocity.Text = "Velocity";
+            this.lblVelocity.Visible = false;
             // 
             // Logo
             // 
@@ -159,7 +168,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(484, 461);
             this.Controls.Add(this.Logo);
             this.Controls.Add(this.lblVelocity);

@@ -85,16 +85,23 @@ namespace BouncingBall
             pic.Image = null;
             lblBounces.Text = "";
             timer.Start();
+
+            btnResume.Enabled = false;
+            btnPause.Enabled = true;
         }
 
         private void btnPause_Click(object sender, EventArgs e)
         {
             timer.Stop();
+            btnResume.Enabled = true;
+            btnPause.Enabled = false;
         }
 
         private void btnResume_Click(object sender, EventArgs e)
         {
             timer.Start();
+            btnResume.Enabled = false;
+            btnPause.Enabled = true;
         }
 
         private void pnl_Paint(object sender, PaintEventArgs e)
@@ -140,6 +147,9 @@ namespace BouncingBall
                     player_suc.Play();
                     pic.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/win.png");
                     lblNotes.Text = "You are good at this. " + bounce + " bounces.";
+
+                    btnResume.Enabled = false;
+                    btnPause.Enabled = false;
                     return;
                 }
 
@@ -162,6 +172,9 @@ namespace BouncingBall
                         lblNotes.Visible = true;
                         pic.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/loose.png");
                         lblNotes.Text = "Ohh...please try again.";
+
+                        btnResume.Enabled = false;
+                        btnPause.Enabled = false;
                     }
                 }
             }
