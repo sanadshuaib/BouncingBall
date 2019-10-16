@@ -137,7 +137,7 @@
             // 
             // txtVelocity
             // 
-            this.txtVelocity.Location = new System.Drawing.Point(341, 205);
+            this.txtVelocity.Location = new System.Drawing.Point(487, 200);
             this.txtVelocity.Name = "txtVelocity";
             this.txtVelocity.Size = new System.Drawing.Size(100, 20);
             this.txtVelocity.TabIndex = 4;
@@ -147,7 +147,7 @@
             // lblVelocity
             // 
             this.lblVelocity.AutoSize = true;
-            this.lblVelocity.Location = new System.Drawing.Point(338, 189);
+            this.lblVelocity.Location = new System.Drawing.Point(484, 184);
             this.lblVelocity.Name = "lblVelocity";
             this.lblVelocity.Size = new System.Drawing.Size(44, 13);
             this.lblVelocity.TabIndex = 5;

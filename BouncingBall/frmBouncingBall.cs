@@ -42,31 +42,30 @@ namespace BouncingBall
         #region Main Functions area :-
         private void moveBall()
         {
-            g = Convert.ToDouble(txtVelocity.Text);
-
-            if (dirRight)
+            if (dirRight) // Move the ball to the right
             {
                 el_X += 5;
 
-                if (el_X >= pnl.Width - 50)
+                if (el_X >= pnl.Width - 50) // If the position of the ball reaches the right limit of the window then go to th left
                 {
                     dirRight = false;
                 }
             }
             else
-            {
+            {// Move the ball to the left
                 el_X -= 5;
 
-                if (el_X <= 5)
+                if (el_X <= 5)// If the position of the ball reaches the left limit of the window then go to th right
                     dirRight = true;
             }
 
-            if (dirDown)
+            if (dirDown) // Move the ball down
             {
-                velocity = velocity + g;
+                velocity = velocity + g; // The velocity of the ball while going down
 
-                if (velocity == old_velocity)
+                if (velocity == old_velocity) // The ball has lost its velocity and no more bounces will take place
                 {
+                    // The game is finished /////////////// YOU WIN /////////////////////////////
                     timer.Stop();
                     pic.Visible = true;
                     lblNotes.Visible = true;
@@ -79,11 +78,11 @@ namespace BouncingBall
                     return;
                 }
 
-                el_Y = (el_Y + Convert.ToInt32(velocity)) + Convert.ToInt32(0.5 * g);
+                el_Y = (el_Y + Convert.ToInt32(velocity)) + Convert.ToInt32(0.5 * g); // Increase the vertical position of the ball gradually
 
-                if (el_Y >= pnl.Height - 82)
+                if (el_Y >= pnl.Height - 82) // If the ball reaches the bottom limit of the window
                 {
-                    if (el_X + 25 >= limitX && el_X <= (limitX + 50))
+                    if (el_X + 25 >= limitX && el_X <= (limitX + 50)) // Check if the ball hits the rectangle and pops up again
                     {
                         old_velocity = velocity;
                         dirDown = false;
@@ -92,7 +91,7 @@ namespace BouncingBall
                         player.Play();
                     }
                     else
-                    {
+                    { // The ball didn't hit the rectangle and you loose
                         timer.Stop();
                         pic.Visible = true;
                         lblNotes.Visible = true;
@@ -105,18 +104,19 @@ namespace BouncingBall
                 }
             }
             else
-            {
-                velocity = velocity - g;
+            {// The direction is UP now
+                velocity = velocity - g; // The velocity of the ball will decrease until it reaches zero
+
                 el_Y = (el_Y - Convert.ToInt32(velocity)) - Convert.ToInt32(0.5 * g);
 
-                if (velocity <= 0)
+                if (velocity <= 0) // The velocity now is zero or less so go down again
                 {
                     velocity = 0;
                     dirDown = true;
                 }
             }
 
-            drawEllipse(el_X, el_Y);
+            drawEllipse(el_X, el_Y); // Draw the ball with its new location on the screen
             pnl.Invalidate();
         }
 
